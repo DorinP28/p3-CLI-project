@@ -4,7 +4,7 @@ Python Command Line Project - Flatiron Phase 3
 
 - [Project Requirements](https://my.learn.co/courses/653/pages/phase-3-project-cli?module_item_id=95439)
 
-### Instructions
+## Instructions
 
 - Python fundamentals.
 - Data structures (and more recently, algorithms).
