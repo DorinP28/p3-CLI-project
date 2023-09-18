@@ -30,3 +30,18 @@ def handle_borrow_book(user):
         print(f"\nYou've borrowed {book.name}!")
     else:
         print("\nInvalid choice or book not available.")
+
+
+def handle_return_book(user):
+    borrowed_books = (
+        session.query(BorrowedBook, Book)
+        .join(Book, BorrowedBook.book_id == Book.id)
+        .filter(BorrowedBook.user_id == user.id)
+        .all()
+    )
+    if not borrowed_books:
+        print("\nYou haven't borrowed any books.")
+    else:
+        print("\nYour Borrowed Books:")
+        for record, book in borrowed_books:
+            print(f"ID: {book.id}, Name: {book.name}")
