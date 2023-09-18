@@ -29,3 +29,27 @@ def create_users(num_users=10):
         users.append(user)
     session.commit()
     return users
+
+
+def create_books(authors):
+    book_titles = [
+        lambda: fake.catch_phrase(),
+        lambda: fake.bs(),
+        lambda: f"{fake.color_name()} {fake.word()}",
+        lambda: f"{fake.city()} {fake.word()}",
+        lambda: fake.job(),
+    ]
+    min_books_per_author = 1
+    max_books_per_author = 5
+
+    books = []
+    for author in authors:
+        num_books = random.randint(min_books_per_author, max_books_per_author)
+        for _ in range(num_books):
+            title = random.choice(book_titles)()
+            title = " ".join(word.capitalize() for word in title.split())
+            book = Book(name=title, author_id=author.id, is_available=True)
+            session.add(book)
+            books.append(book)
+    session.commit()
+    return books
