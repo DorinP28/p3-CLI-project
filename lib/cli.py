@@ -2,6 +2,7 @@ from db.models import User
 from simple_term_menu import TerminalMenu
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
+from helpers import show_available_books, handle_borrow_book, handle_return_book
 
 engine = create_engine("sqlite:///library.db")
 
