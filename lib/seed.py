@@ -19,3 +19,13 @@ def create_authors(num_authors=5):
         authors.append(author)
     session.commit()
     return authors
+
+
+def create_users(num_users=10):
+    users = []
+    for _ in range(num_users):
+        user = User(name=fake.name())
+        session.add(user)
+        users.append(user)
+    session.commit()
+    return users
