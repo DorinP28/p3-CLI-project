@@ -61,3 +61,8 @@ class Cli:
     def exit(self):
         print("\nThank you for using the Library Management System!")
         quit()
+
+
+if __name__ == "__main__":
+    cli = Cli()
+    cli.start()
