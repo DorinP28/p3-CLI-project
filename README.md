@@ -16,28 +16,26 @@ Welcome to the **Library Management System (LMS) Command-Line Interface (CLI)** 
 
 The project is structured as follows:
 
-````plaintext
 .
 ├── LICENSE
 ├── Pipfile and Pipfile.lock
 ├── README.md
 ├── lib
-│   ├── __init__.py
-│   ├── cli.py
-│   ├── db
-│   │   ├── alembic.ini
-│   │   ├── book.sql
-│   │   ├── library.db
-│   │   ├── migrations
-│   │   ├── models.py
-│   │   └── session.py
-│   ├── helpers.py
-│   ├── library.db
-│   └── seed.py
+│ ├── **init**.py
+│ ├── cli.py
+│ ├── db
+│ │ ├── alembic.ini
+│ │ ├── book.sql
+│ │ ├── library.db
+│ │ ├── migrations
+│ │ ├── models.py
+│ │ └── session.py
+│ ├── helpers.py
+│ ├── library.db
+│ └── seed.py
 ├── note.md
 └── video
-    └── VIDEO.md
-
+└── VIDEO.md
 
 - `cli.py`: Contains the main interface for user interactions with the library.
 - `seed.py`: Provides utility functions for seeding the database with sample data.
@@ -49,6 +47,7 @@ The project is structured as follows:
 ## Requirements
 
 Ensure you have the following installed:
+
 - Python 3.8 or higher
 - `pipenv` for managing dependencies.
 
@@ -57,19 +56,19 @@ Ensure you have the following installed:
 1. Fork the repository:
 
 2. Install the dependencies:
-    ```shell
-    pipenv install
-    ```
+   ```shell
+   pipenv install
+   ```
 3. Open your virtual environment:
-    ```shell
-    pipenv shell
-    ```
+   ```shell
+   pipenv shell
+   ```
 4. Navigate to the lib folder, populate the database with our sample data and kickstart the CLI interface using:
-    ```shell
-    cd ..
-    python seed.py
-    python cli.py
-    ```
+   ```shell
+   cd ..
+   python seed.py
+   python cli.py
+   ```
 
 Upon launch:
 
@@ -90,8 +89,6 @@ Books: List of books with references to their respective authors and genres.
 Users: Registered system users.
 BorrowedBooks: Keeps track of borrowed books and their respective users.
 Each table is equipped with relevant attributes, like name, author_id, genre_id, etc. Inter-table relationships are established through foreign keys.
-
-
 
 - [Project Requirements](https://my.learn.co/courses/653/pages/phase-3-project-cli?module_item_id=95439)
 
@@ -128,4 +125,3 @@ Each table is equipped with relevant attributes, like name, author_id, genre_id,
 
 * A database created and modified with SQLAlchemy ORM with 3+ related tables.
 * Use of many-to-many relationships with SQLAlchemy ORM.
-````
