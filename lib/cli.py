@@ -36,3 +36,28 @@ class Cli:
             session.add(self.current_user)
             session.commit()
             print(f"\nWelcome, {self.current_user.name}!")
+
+    def handle_user_actions(self):
+        while True:
+            print("\nChoose an action:")
+            options = [
+                "Browse Available Books",
+                "Borrow a Book",
+                "Return a Book",
+                "Logout",
+            ]
+            terminal_menu = TerminalMenu(options)
+            choice = options[terminal_menu.show()]
+
+            if choice == "Browse Available Books":
+                show_available_books()
+            elif choice == "Borrow a Book":
+                handle_borrow_book(self.current_user)
+            elif choice == "Return a Book":
+                handle_return_book(self.current_user)
+            elif choice == "Logout":
+                break
+
+    def exit(self):
+        print("\nThank you for using the Library Management System!")
+        quit()
