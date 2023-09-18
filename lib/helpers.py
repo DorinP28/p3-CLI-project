@@ -1,4 +1,4 @@
-from db.models import Book
+from db.models import Book, BorrowedBook
 from db.session import Session
 
 session = Session()
