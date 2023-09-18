@@ -1,5 +1,14 @@
-.venv
+*.db
+*.db-journal
 __pycache__/
 *.pyc
 *.pyo
-*.egg-info
+.DS_Store  # For macOS
+Thumbs.db  # For Windows
+*.log
+*.swp  # For Vim
+*.swo  # For Vim
+*.idea/  # For PyCharm
+.vscode/  # For VS Code
+*.bak
+*.tmp
