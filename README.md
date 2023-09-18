@@ -16,6 +16,7 @@ Welcome to the **Library Management System (LMS) Command-Line Interface (CLI)** 
 
 The project is structured as follows:
 
+```shell
 .
 ├── LICENSE
 ├── Pipfile and Pipfile.lock
@@ -36,6 +37,7 @@ The project is structured as follows:
 ├── note.md
 └── video
 └── VIDEO.md
+```
 
 - `cli.py`: Contains the main interface for user interactions with the library.
 - `seed.py`: Provides utility functions for seeding the database with sample data.
