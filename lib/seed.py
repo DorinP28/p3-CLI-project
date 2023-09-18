@@ -53,3 +53,10 @@ def create_books(authors):
             books.append(book)
     session.commit()
     return books
+
+
+if __name__ == "__main__":
+    authors = create_authors()
+    books = create_books(authors)
+    users = create_users()
+    print(f"Seeded {len(authors)} authors, {len(books)} books, and {len(users)} users.")
