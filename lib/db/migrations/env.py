@@ -6,6 +6,12 @@ from sqlalchemy import pool
 import os
 import sys
 
+current_dir = os.path.abspath(os.path.dirname(__file__))
+
+
+project_root = os.path.abspath(os.path.join(current_dir, "..", "..", ".."))
+sys.path.append(project_root)
+
 from alembic import context
 
 # this is the Alembic Config object, which provides
