@@ -24,3 +24,15 @@ class Cli:
                 self.handle_user_actions()
             else:
                 self.exit()
+
+    def handle_login(self):
+        username = input("\nEnter your name: ")
+        user = session.query(User).filter(User.name == username).first()
+        if user:
+            self.current_user = user
+            print(f"\nWelcome back, {user.name}!")
+        else:
+            self.current_user = User(name=username)
+            session.add(self.current_user)
+            session.commit()
+            print(f"\nWelcome, {self.current_user.name}!")
