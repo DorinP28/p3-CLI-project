@@ -10,3 +10,5 @@ def show_available_books():
         print("\nNo books available at the moment.")
     else:
         print("\nAvailable Books:")
+        for book in available_books:
+            print(f"ID: {book.id}, Name: {book.name}, Author: {book.author.name}")
