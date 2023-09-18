@@ -5,6 +5,12 @@ name = "pypi"
 
 [packages]
 alembic = "*"
+sqlalchemy = "*"
+click = "*"
+ipdb = "*"
+faker = "*"
+wonderwords = "*"
+simple-term-menu = "*"
 
 [dev-packages]
 
