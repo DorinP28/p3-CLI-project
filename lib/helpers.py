@@ -45,3 +45,10 @@ def handle_return_book(user):
         print("\nYour Borrowed Books:")
         for record, book in borrowed_books:
             print(f"ID: {book.id}, Name: {book.name}")
+
+        book_id = input("Enter the ID of the book you want to return: ")
+        book_record = (
+            session.query(BorrowedBook)
+            .filter(BorrowedBook.book_id == book_id, BorrowedBook.user_id == user.id)
+            .first()
+        )
