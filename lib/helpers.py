@@ -52,3 +52,11 @@ def handle_return_book(user):
             .filter(BorrowedBook.book_id == book_id, BorrowedBook.user_id == user.id)
             .first()
         )
+        if book_record:
+            book = session.query(Book).filter(Book.id == book_id).first()
+            book.is_available = True
+            session.delete(book_record)
+            session.commit()
+            print(f"\nYou've returned {book.name}!")
+        else:
+            print("\nInvalid choice or you haven't borrowed this book.")
